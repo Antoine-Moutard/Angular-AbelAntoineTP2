@@ -1,1 +1,10 @@
-<p>manage works!</p>
+<div *ngIf="contactData; else notFound">
+    <p>Prénom : {{ contactData.firstName }}</p>
+    <p>Nom : {{ contactData.lastName }}</p>
+    <p>Âge : {{ contactData.age }}</p>
+    <p *ngIf="contactData.email">Email : {{ contactData.email }}</p>
+    <p>Commentaire : {{ contactData.comment }}</p>
+  </div>
+  <ng-template #notFound>
+    <p>404 Not Found</p>
+  </ng-template>

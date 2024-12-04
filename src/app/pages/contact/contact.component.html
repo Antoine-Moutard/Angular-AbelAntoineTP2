@@ -1,1 +1,23 @@
-<p>contact works!</p>
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="d-flex flex-column">
+    <label>Prénom
+        <input name="firstName" ngModel required>
+    </label>
+    <label>Nom
+        <input name="lastName" ngModel required>
+    </label>
+    <label>Âge
+        <input name="age" type="number" ngModel>
+    </label>
+    <label>
+        <input type="checkbox" (change)="toggleEmail($event)"> Hide Email
+    </label>
+    <div *ngIf="!hideEmail">
+        <label>Email
+            <input name="email" ngModel [required]="!hideEmail" email>
+        </label>
+    </div>
+    <label>Commentaire
+        <textarea name="comment" ngModel required></textarea>
+    </label>
+    <button type="submit" [disabled]="!contactForm.valid">Envoyer</button>
+</form>

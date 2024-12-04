@@ -1,1 +1,9 @@
-<p>list works!</p>
+<ul>
+    <li *ngFor="let film of films" (click)="showDetails(film)">
+        {{ film.title }}
+    </li>
+</ul>
+<div *ngIf="selectedFilm">
+    <h3>{{ selectedFilm.title }}</h3>
+    <img [src]="selectedFilm.poster" alt="{{ selectedFilm.title }}">
+</div>
