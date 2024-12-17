@@ -39,7 +39,10 @@
 
     <div class="mb-3">
         <label for="comment" class="form-label">Commentaire</label>
-        <textarea id="comment" name="comment" rows="4" class="form-control" ngModel required></textarea>
+        <textarea id="comment" name="comment" rows="4" class="form-control" ngModel required #comment="ngModel"></textarea>
+        <div *ngIf="comment.invalid && comment.touched" class="text-danger">
+            Please enter a comment.
+        </div>
     </div>
 
     <div class="text-center">
