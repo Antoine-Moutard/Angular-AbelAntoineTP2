@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
-
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -15,17 +13,20 @@ import { RouterModule } from '@angular/router';
 export class ContactComponent {
   hideEmail = false;
 
-toggleEmail(event: any) {
-  this.hideEmail = event.target.checked;
-}
+  constructor(private router: Router) {}
 
-
-onSubmit(form: any) {
-  if (form.valid) {
-    alert('Le formulaire est valide');
-    localStorage.setItem('contactData', JSON.stringify(form.value));
-    form.reset();
-
+  toggleEmail(event: any) {
+    this.hideEmail = event.target.checked;
   }
-}
+
+  onSubmit(form: any) {
+    if (form.valid) {
+      alert('Le formulaire est valide');
+      localStorage.setItem('contactData', JSON.stringify(form.value));
+      form.reset();
+
+      // Redirect to /manage route
+      this.router.navigate(['/manage']);
+    }
+  }
 }
