@@ -11,11 +11,11 @@ import { RouterModule } from '@angular/router';
 })
 export class ListComponent {
   films = [
-    { title: 'Film 1', poster: 'https://www.nanarland.com/media/cache/resolve/front_film_single_cover/uploads/films/5e8b565c69467-sharknado-jaquette.jpg' },
-    { title: 'Film 2', poster: 'https://www.nanarland.com/media/cache/resolve/front_film_single_cover/uploads/films/5e8b565c69467-sharknado-jaquette.jpg' },
-    { title: 'Film 3', poster: 'https://www.nanarland.com/media/cache/resolve/front_film_single_cover/uploads/films/5e8b565c69467-sharknado-jaquette.jpg' },
-    { title: 'Film 4', poster: 'https://www.nanarland.com/media/cache/resolve/front_film_single_cover/uploads/films/5e8b565c69467-sharknado-jaquette.jpg' },
-    { title: 'Film 5', poster: 'https://www.nanarland.com/media/cache/resolve/front_film_single_cover/uploads/films/5e8b565c69467-sharknado-jaquette.jpg' },
+    { title: 'Indiana Jones', poster: 'assets/indiana-jones.jpg'},
+    { title: 'Transformers', poster: 'assets/transformers.jpg' },
+    { title: 'Fight Club', poster: 'assets/fight-club.jpg' },
+    { title: 'Interstellar', poster: 'assets/interstellar.jpg' },
+    { title: 'Whiplash', poster: 'assets/whiplash.jpg' },
   ];
 
   selectedFilm: any;
