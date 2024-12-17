@@ -1,23 +1,42 @@
-<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="d-flex flex-column">
-    <label>Prénom
-        <input name="firstName" ngModel required>
-    </label>
-    <label>Nom
-        <input name="lastName" ngModel required>
-    </label>
-    <label>Âge
-        <input name="age" type="number" ngModel>
-    </label>
-    <label>
-        <input type="checkbox" (change)="toggleEmail($event)"> Hide Email
-    </label>
-    <div *ngIf="!hideEmail">
-        <label>Email
-            <input name="email" ngModel [required]="!hideEmail" email>
-        </label>
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="d-flex flex-column gap-3 p-4 border rounded shadow-sm">
+    <!-- Prénom -->
+    <div class="mb-3">
+        <label for="firstName" class="form-label">Prénom</label>
+        <input id="firstName" name="firstName" class="form-control" ngModel required>
     </div>
-    <label>Commentaire
-        <textarea name="comment" ngModel required></textarea>
-    </label>
-    <button type="submit" [disabled]="!contactForm.valid">Envoyer</button>
+
+    <!-- Nom -->
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Nom</label>
+        <input id="lastName" name="lastName" class="form-control" ngModel required>
+    </div>
+
+    <!-- Âge -->
+    <div class="mb-3">
+        <label for="age" class="form-label">Âge</label>
+        <input id="age" name="age" type="number" class="form-control" ngModel>
+    </div>
+
+    <!-- Checkbox pour cacher l'email -->
+    <div class="form-check mb-3">
+        <input id="hideEmail" type="checkbox" class="form-check-input" (change)="toggleEmail($event)">
+        <label for="hideEmail" class="form-check-label">Cacher l'email</label>
+    </div>
+
+    <!-- Email -->
+    <div *ngIf="!hideEmail" class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" class="form-control" ngModel [required]="!hideEmail" email>
+    </div>
+
+    <!-- Commentaire -->
+    <div class="mb-3">
+        <label for="comment" class="form-label">Commentaire</label>
+        <textarea id="comment" name="comment" rows="4" class="form-control" ngModel required></textarea>
+    </div>
+
+    <!-- Bouton d'envoi -->
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Envoyer</button>
+    </div>
 </form>
