@@ -26,7 +26,7 @@ export class ContactComponent {
       form.reset();
 
       // Redirect to /manage route
-      this.router.navigate(['/manage']);
+      this.router.navigate(['/home']);
     }
   }
 }
